@@ -1,1 +1,562 @@
+/* ===========================================
+   SEIKOVERSE WORLD CUP 2026
+   VERSION 2.0
+   PART 1
+=========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#0f0f10;
+
+    color:#ffffff;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+}
+
+/* ---------- COLORS ---------- */
+
+:root{
+
+    --bg:#0f0f10;
+
+    --panel:#17181b;
+
+    --panel2:#202227;
+
+    --line:#555;
+
+    --gold:#d8b34b;
+
+    --green:#2ecc71;
+
+    --red:#ff4d4d;
+
+    --text:#ffffff;
+
+    --text2:#bbbbbb;
+
+    --shadow:0 8px 30px rgba(0,0,0,.45);
+
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+
+.wrapper{
+
+    width:100%;
+
+    max-width:1800px;
+
+    margin:auto;
+
+    padding:30px;
+
+}
+
+/* ---------- HEADER ---------- */
+
+header{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+header h1{
+
+    font-size:72px;
+
+    font-weight:900;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+}
+
+header h2{
+
+    margin-top:10px;
+
+    font-size:20px;
+
+    color:var(--text2);
+
+    font-weight:500;
+
+    letter-spacing:1px;
+
+}
+
+/* ---------- MAIN BRACKET ---------- */
+
+.bracket{
+
+    display:grid;
+
+    grid-template-columns:
+
+        1fr
+
+        220px
+
+        1fr;
+
+    gap:40px;
+
+    align-items:center;
+
+}
+
+/* ---------- LEFT / RIGHT SIDE ---------- */
+
+.left-side,
+
+.right-side{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    gap:26px;
+
+}
+
+/* ---------- TROPHY ---------- */
+
+.center-stage{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.center-stage img{
+
+    width:170px;
+
+    filter:drop-shadow(0 0 20px rgba(216,179,75,.45));
+
+}
+
+/* ---------- MATCH CARD ---------- */
+
+.match{
+
+    background:var(--panel);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:12px;
+
+    padding:12px;
+
+    box-shadow:var(--shadow);
+
+    transition:.25s;
+
+}
+
+.match:hover{
+
+    transform:translateY(-2px);
+
+    background:#1d1e21;
+
+}
+
+/* ---------- TEAM ---------- */
+
+.team{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:8px 10px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.team:hover{
+
+    background:rgba(255,255,255,.06);
+
+}
+
+.team.selected{
+
+    background:rgba(46,204,113,.18);
+
+    border:1px solid rgba(46,204,113,.55);
+
+}
+
+.team.eliminated{
+
+    opacity:.35;
+
+}
+
+/* ---------- FLAG ---------- */
+
+.flag{
+
+    width:22px;
+
+    height:16px;
+
+    object-fit:cover;
+
+    border-radius:2px;
+
+    margin-right:10px;
+
+}
+
+.team-name{
+
+    display:flex;
+
+    align-items:center;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    flex:1;
+
+}
+
+/* ---------- WIN MARK ---------- */
+
+.check{
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    border:2px solid #666;
+
+}
+
+.team.selected .check{
+
+    background:var(--green);
+
+    border-color:var(--green);
+
+}
+/* ===========================================
+   PART 2
+   BRACKET STRUCTURE
+=========================================== */
+
+/* ROUND */
+
+.round{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-around;
+
+    gap:18px;
+
+}
+
+/* MATCH SPACING */
+
+.round.r32 .match{
+
+    margin:8px 0;
+
+}
+
+.round.r16 .match{
+
+    margin:42px 0;
+
+}
+
+.round.qf .match{
+
+    margin:95px 0;
+
+}
+
+.round.sf .match{
+
+    margin:185px 0;
+
+}
+
+.round.final .match{
+
+    margin-top:330px;
+
+}
+
+/* COLUMN */
+
+.column{
+
+    display:flex;
+
+    gap:26px;
+
+    align-items:flex-start;
+
+}
+
+/* CONNECTOR LINES */
+
+.connector{
+
+    position:relative;
+
+    width:40px;
+
+    min-width:40px;
+
+}
+
+.connector:before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:50%;
+
+    width:20px;
+
+    height:2px;
+
+    background:var(--line);
+
+}
+
+.connector:after{
+
+    content:"";
+
+    position:absolute;
+
+    right:0;
+
+    top:-55px;
+
+    width:2px;
+
+    height:110px;
+
+    background:var(--line);
+
+}
+
+/* RIGHT SIDE */
+
+.right-side .connector{
+
+    transform:scaleX(-1);
+
+}
+
+/* ROUND LABEL */
+
+.round-title{
+
+    text-align:center;
+
+    color:#9c9c9c;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    margin-bottom:14px;
+
+    text-transform:uppercase;
+
+}
+
+/* WINNER SLOT */
+
+.next-slot{
+
+    background:rgba(255,255,255,.04);
+
+    border:1px dashed rgba(255,255,255,.15);
+
+    border-radius:10px;
+
+    min-height:56px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#666;
+
+    font-size:13px;
+
+}
+
+/* CHAMPION */
+
+.champion-card{
+
+    width:220px;
+
+    margin:auto;
+
+    background:linear-gradient(
+        180deg,
+        rgba(216,179,75,.20),
+        rgba(216,179,75,.05)
+    );
+
+    border:1px solid rgba(216,179,75,.35);
+
+    border-radius:14px;
+
+    padding:16px;
+
+    text-align:center;
+
+    box-shadow:0 0 30px rgba(216,179,75,.18);
+
+}
+
+.champion-card h3{
+
+    font-size:15px;
+
+    color:var(--gold);
+
+    letter-spacing:1px;
+
+    margin-bottom:10px;
+
+}
+
+.champion-team{
+
+    font-size:18px;
+
+    font-weight:700;
+
+}
+
+/* BUTTON */
+
+.predict-btn{
+
+    display:block;
+
+    width:260px;
+
+    margin:45px auto;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:var(--gold);
+
+    color:#111;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.predict-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 30px rgba(216,179,75,.30);
+
+}
+
+/* LEADERBOARD BUTTON */
+
+.board-btn{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:#202227;
+
+    color:#fff;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    box-shadow:var(--shadow);
+
+}
+
+.board-btn:hover{
+
+    background:#2a2b30;
+
+}
 
