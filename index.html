@@ -1,1 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SeikoVerse World Cup Predictor 2026</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<header>
+
+<div class="logo">
+
+<img src="assets/logo/logo.png" alt="Logo">
+
+</div>
+
+<h1>
+
+WORLD CUP
+
+</h1>
+
+<h2>
+
+SEIKOVERSE PREDICTOR 2026
+
+</h2>
+
+<div class="top-buttons">
+
+<button id="loginBtn">
+
+Login
+
+</button>
+
+<button id="leaderboardBtn">
+
+Leaderboard
+
+</button>
+
+</div>
+
+</header>
+
+<main class="bracket">
+
+<div class="left-side">
+
+<section class="round r32">
+
+<h3>ROUND OF 32</h3>
+
+<div class="match" id="m1">
+
+<div class="team" data-team="BRA">
+
+<img class="flag" src="assets/flags/bra.png">
+
+<span>Brazil</span>
+
+<div class="check"></div>
+
+</div>
+
+<div class="team" data-team="JPN">
+
+<img class="flag" src="assets/flags/jpn.png">
+
+<span>Japan</span>
+
+<div class="check"></div>
+
+</div>
+
+</div>
+
+<div class="match" id="m2">
+
+<div class="team" data-team="ESP">
+
+<img class="flag" src="assets/flags/esp.png">
+
+<span>Spain</span>
+
+<div class="check"></div>
+
+</div>
+
+<div class="team" data-team="AUT">
+
+<img class="flag" src="assets/flags/aut.png">
+
+<span>Austria</span>
+
+<div class="check"></div>
+
+</div>
+
+</div>
+
+<div class="match" id="m3">
+
+<div class="team" data-team="FRA">
+
+<img class="flag" src="assets/flags/fra.png">
+
+<span>France</span>
+
+<div class="check"></div>
+
+</div>
+
+<div class="team" data-team="SWE">
+
+<img class="flag" src="assets/flags/swe.png">
+
+<span>Sweden</span>
+
+<div class="check"></div>
+
+</div>
+
+</div>
+  <div class="match" id="m4">
+
+    <div class="team" data-team="GER">
+
+        <img class="flag" src="assets/flags/ger.png">
+
+        <span>Germany</span>
+
+        <div class="check"></div>
+
+    </div>
+
+    <div class="team" data-team="PAR">
+
+        <img class="flag" src="assets/flags/par.png">
+
+        <span>Paraguay</span>
+
+        <div class="check"></div>
+
+    </div>
+
+</div>
+
+</section>
+
+<section class="round r16">
+
+<h3>ROUND OF 16</h3>
+
+<div class="next-slot" id="L16-1">
+
+<span>Winner 1</span>
+
+</div>
+
+<div class="next-slot" id="L16-2">
+
+<span>Winner 2</span>
+
+</div>
+
+<div class="next-slot" id="L16-3">
+
+<span>Winner 3</span>
+
+</div>
+
+<div class="next-slot" id="L16-4">
+
+<span>Winner 4</span>
+
+</div>
+
+</section>
+
+<section class="round qf">
+
+<h3>QUARTER FINAL</h3>
+
+<div class="next-slot" id="QF-1">
+
+<span>Quarter 1</span>
+
+</div>
+
+<div class="next-slot" id="QF-2">
+
+<span>Quarter 2</span>
+
+</div>
+
+</section>
+
+<section class="round sf">
+
+<h3>SEMI FINAL</h3>
+
+<div class="next-slot" id="SF-1">
+
+<span>Semi Final</span>
+
+</div>
+
+</section>
+
+</div>
+
+<div class="center-stage">
+
+<div class="champion-card">
+
+<div class="trophy">
+
+🏆
+
+</div>
+
+<h3>
+
+WORLD CUP
+
+</h3>
+
+<div id="Champion">
+
+Champion
+
+</div>
+
+</div>
+
+</div>
+
+<div class="right-side">
+
+<section class="round sf">
+
+<h3>SEMI FINAL</h3>
+
+<div class="next-slot" id="SF-2">
+
+<span>Semi Final</span>
+
+</div>
+
+</section>
+  <section class="round qf">
+
+<h3>QUARTER FINAL</h3>
+
+<div class="next-slot" id="QF-3">
+
+<span>Quarter 3</span>
+
+</div>
+
+<div class="next-slot" id="QF-4">
+
+<span>Quarter 4</span>
+
+</div>
+
+</section>
+
+<section class="round r16">
+
+<h3>ROUND OF 16</h3>
+
+<div class="next-slot" id="R16-5">
+
+<span>Winner 5</span>
+
+</div>
+
+<div class="next-slot" id="R16-6">
+
+<span>Winner 6</span>
+
+</div>
+
+<div class="next-slot" id="R16-7">
+
+<span>Winner 7</span>
+
+</div>
+
+<div class="next-slot" id="R16-8">
+
+<span>Winner 8</span>
+
+</div>
+
+</section>
+
+<section class="round r32">
+
+<h3>ROUND OF 32</h3>
+
+<div class="match" id="m5">
+
+<div class="team" data-team="NED">
+
+<img class="flag" src="assets/flags/ned.png">
+
+<span>Netherlands</span>
+
+<div class="check"></div>
+
+</div>
+
+<div class="team" data-team="MAR">
+
+<img class="flag" src="assets/flags/mar.png">
+
+<span>Morocco</span>
+
+<div class="check"></div>
+
+</div>
+
+</div>
+
+<div class="match" id="m6">
+
+<div class="team" data-team="CIV">
+
+<img class="flag" src="assets/flags/civ.png">
+
+<span>Ivory Coast</span>
+
+<div class="check"></div>
+
+</div>
+
+<div class="team" data-team="NOR">
+
+<img class="flag" src="assets/flags/nor.png">
+
+<span>Norway</span>
+
+<div class="check"></div>
+
+</div>
+
+</div>
+
+<div class="match" id="m7">
+
+<div class="team" data-team="MEX">
+
+<img class="flag" src="assets/flags/mex.png">
+
+<span>Mexico</span>
+
+<div class="check"></div>
+
+</div>
+
+<div class="team" data-team="ECU">
+
+<img class="flag" src="assets/flags/ecu.png">
+
+<span>Ecuador</span>
+
+<div class="check"></div>
+
+</div>
+
+</div>
+
+<div class="match" id="m8">
+
+<div class="team" data-team="ENG">
+
+<img class="flag" src="assets/flags/eng.png">
+
+<span>England</span>
+
+<div class="check"></div>
+
+</div>
+
+<div class="team" data-team="COD">
+
+<img class="flag" src="assets/flags/cod.png">
+
+<span>DR Congo</span>
+
+<div class="check"></div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+  </main>
+
+<section class="controls">
+
+<button id="undoBtn">
+
+Undo
+
+</button>
+
+<button id="resetBtn">
+
+Reset
+
+</button>
+
+<button id="saveBtn">
+
+Save Prediction
+
+</button>
+
+</section>
+
+<section id="leaderboardPanel" class="hidden">
+
+<h2>
+
+🏅 Leaderboard
+
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>#</th>
+
+<th>Player</th>
+
+<th>Points</th>
+
+</tr>
+
+</thead>
+
+<tbody id="leaderboardBody">
+
+</tbody>
+
+</table>
+
+</section>
+
+<section id="loginModal" class="hidden">
+
+<div class="modal">
+
+<h2>
+
+Login
+
+</h2>
+
+<input
+type="email"
+id="email"
+placeholder="Email">
+
+<input
+type="password"
+id="password"
+placeholder="Password">
+
+<button id="loginUser">
+
+Login
+
+</button>
+
+<button id="registerUser">
+
+Create Account
+
+</button>
+
+<button id="closeModal">
+
+Close
+
+</button>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 SeikoVerse World Cup Predictor
+
+</p>
+
+</footer>
+
+<script src="firebase.js"></script>
+
+<script src="leaderboard.js"></script>
+
+<script src="admin.js"></script>
+
+<script src="app.js"></script>
+
+</div>
+
+</body>
+
+</html>
